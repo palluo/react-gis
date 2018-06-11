@@ -1,8 +1,11 @@
 import { combineReducers } from 'redux';
 import map from './map';
+import container  from './container'
+
 
 const myApp = combineReducers({
-  map
-});
+    container,
+    map
+})
 
 export default myApp;

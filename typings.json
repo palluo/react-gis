@@ -5,6 +5,7 @@
     "object-assign": "registry:dt/object-assign#4.0.1+20161119044246",
     "react-router": "registry:dt/react-router#4.0.0+20170323201651",
     "redux": "registry:dt/redux#3.5.2+20160703092728",
+    "redux-thunk": "registry:dt/redux-thunk#2.1.0+20160703120921",
     "webpack-dev-server": "registry:dt/webpack-dev-server#1.12.1+20170117213337",
     "whatwg-fetch": "registry:dt/whatwg-fetch#0.0.0+20161004182750"
   },

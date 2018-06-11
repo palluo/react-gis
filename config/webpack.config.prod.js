@@ -200,6 +200,8 @@ module.exports = {
                       loader: require.resolve('css-loader'),
                       options: {
                         importLoaders: 1,
+                        modules: true,   // 新增对css modules的支持
+                        localIdentName: '[name]__[local]__[hash:base64:5]', //
                         minimize: true,
                         sourceMap: shouldUseSourceMap,
                       },
@@ -225,7 +227,10 @@ module.exports = {
                       },
                     },
                     {
-                      loader: require.resolve('less-loader') // compiles Less to CSS
+                      loader: require.resolve('less-loader'), // compiles Less to CSS
+                      options:{
+                        javascriptEnabled: true
+                      }
                     },
                   ],
                 },

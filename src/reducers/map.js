@@ -9,7 +9,7 @@ const map = (state = { }, action) => {
       return {
         mapCtrl: new MapView({
           container: action.domNode,
-          map: new EsriMap({basemap: 'topo'})
+          map: new EsriMap({basemap: 'streets'})
         })
       }
 

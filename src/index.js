@@ -3,11 +3,19 @@ import ReactDOM from 'react-dom';
 import './index.less';
 import App from './App';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension'
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk'
 import myApp from './reducers'
 import registerServiceWorker from './registerServiceWorker';
 
-let store = createStore(myApp)
+const middlewares = [thunk]
+
+let store = createStore(
+  myApp,
+  composeWithDevTools(applyMiddleware(...middlewares))
+)
+
 
 ReactDOM.render(
   <Provider store={store}>
@@ -16,3 +24,4 @@ ReactDOM.render(
   document.getElementById('root')
 );
 registerServiceWorker();
+
