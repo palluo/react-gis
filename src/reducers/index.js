@@ -1,11 +1,13 @@
 import { combineReducers } from 'redux';
 import map from './map';
 import container  from './container'
+import login  from './login'
 
 
 const myApp = combineReducers({
     container,
-    map
+    login,
+    map,
 })
 
 export default myApp;

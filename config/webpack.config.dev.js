@@ -25,7 +25,9 @@ const env = getClientEnvironment(publicUrl);
 const weCantMake = function weCantMake (request) {
   return /^dojo/.test(request) || /^dojox/.test(request) || /^dijit/.test(request) || /^esri/.test(request);
 };
-
+function resolve(dir) {
+  return path.join(__dirname, '..', dir)
+};
 // This is the development configuration.
 // It is focused on developer experience and fast rebuilds.
 // The production configuration is different and lives in a separate file.
@@ -181,8 +183,8 @@ module.exports = {
                 loader: require.resolve('css-loader'),
                 options: {
                   importLoaders: 1,
-                  modules: true,   // 新增对css modules的支持
-                  localIdentName: '[name]__[local]__[hash:base64:5]', //
+                 // modules: false,   // 新增对css modules的支持
+                 // localIdentName: '[name]__[local]__[hash:base64:5]', 
                 },
               },
               {
@@ -284,4 +286,10 @@ module.exports = {
   performance: {
     hints: false,
   },
+
+// 修改加入根目录别名
+// alias: {
+//         // +++ 加入配置
+//       '@': resolve('src')
+// }
 };

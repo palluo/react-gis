@@ -3,7 +3,7 @@ import ReactDom from 'react-dom'
 
 
 
-export const addContainer = (url) => {
+ const addContainer = (url) => {
     var arrConfig = [
         {
             name:'登录',
@@ -29,3 +29,4 @@ export const addContainer = (url) => {
     }
     
 }
+export {addContainer}

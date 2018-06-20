@@ -1,7 +1,7 @@
 import MapView from 'esri/views/MapView';
 import EsriMap from 'esri/Map';
 
-const map = (state = { }, action) => {
+const map = (state = {}, action) => {
 
   switch (action.type) {
     case 'CREATE_MAP':

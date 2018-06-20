@@ -50,6 +50,9 @@ const extractTextPluginOptions = shouldUseRelativeAssetPaths
     { publicPath: Array(cssFilename.split('/').length).join('../') }
   : {};
 
+  function resolve(dir) {
+    return path.join(__dirname, '..', dir)
+  };
 // This is the production configuration.
 // It compiles slowly and is focused on producing a fast and minimal bundle.
 // The development configuration is different and lives in a separate file.
@@ -200,8 +203,8 @@ module.exports = {
                       loader: require.resolve('css-loader'),
                       options: {
                         importLoaders: 1,
-                        modules: true,   // 新增对css modules的支持
-                        localIdentName: '[name]__[local]__[hash:base64:5]', //
+                       // modules: false,   // 新增对css modules的支持
+                        //localIdentName: '[name]__[local]__[hash:base64:5]', 
                         minimize: true,
                         sourceMap: shouldUseSourceMap,
                       },
@@ -366,4 +369,9 @@ module.exports = {
     tls: 'empty',
     child_process: 'empty',
   },
+  // 修改加入根目录别名
+// alias: {
+//   // +++ 加入配置
+// '@': resolve('src')
+// },
 };
