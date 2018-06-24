@@ -3,9 +3,7 @@ import { getService } from 'common/utils/serviceUtil'
 import { call, put, select, take, fork} from 'redux-saga/effects'
 import { loginSuccee } from 'actions/login'
 import createBrowserHistory from 'history/createBrowserHistory'
-import { watch } from 'fs';
 
-const history = createBrowserHistory()
 
 function* login(userName, password, onSuccess) {
     let encryptionPassword = yield call(getLoginEncryption, password)
@@ -16,7 +14,6 @@ function* login(userName, password, onSuccess) {
     let userInfo = yield call (logincheck, obj)
     if (userInfo) {
         yield call (onSuccess)
-       // history.push('/main')
         //yield put(loginSuccee(userInfo))
     } 
 }
