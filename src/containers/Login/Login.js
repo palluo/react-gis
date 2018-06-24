@@ -32,7 +32,9 @@ class Login extends React.Component {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
             if (!err) {
-                this.props.login(values.userName, values.password, () =>  this.props.history.push('/main'))
+                //console.log(this.props.history)
+                //this.props.history.push('/main')
+                this.props.login(values.userName, values.password, () =>  this.props.history.replace('/main'))
             }
         });
     }

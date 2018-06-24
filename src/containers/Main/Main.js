@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { createMap } from 'actions/map'
+import { createMap } from 'actions/main'
 import { addContainer } from 'actions/container'
 import { bindActionCreators } from 'redux'
 import './style/main.less'
@@ -9,9 +9,10 @@ const  defaultProps = {
   loginComponent:null,
   containerUid:[],
 }
+
 @connect(
-  state => ({ ...state.container}),
-  dispatch => bindActionCreators({ addContainer, createMap }, dispatch)
+    state => ({ ...state.main}),
+    dispatch => bindActionCreators({ addContainer, createMap }, dispatch)
 )
 
 class Main extends Component {
@@ -40,7 +41,8 @@ class Main extends Component {
           <div className="appHeader">
           </div>
         </div>
-        <div ref='mapView' className='mapView'></div>
+        <div ref='mapView' className='mapView'>
+        </div>
       </div>
     )
     

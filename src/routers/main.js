@@ -1,4 +1,5 @@
 import React from 'react'
+import Loading from 'containers/Loading/Loading'
 export default function (loadable) {
     return [{
         name: 'main',
@@ -6,7 +7,7 @@ export default function (loadable) {
         exact: true,
         component: loadable({
             loader:() => import('containers/Main/Main'),
-            loading:() => <div/>
+            loading: Loading
         })
     }]
 

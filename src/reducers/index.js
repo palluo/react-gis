@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import map from './map';
+import main from './main';
 import container  from './container'
 import login  from './login'
 
@@ -7,7 +7,7 @@ import login  from './login'
 const rootReducer = combineReducers({
     container,
     login,
-    map,
+    main,
 })
 
 export default rootReducer;

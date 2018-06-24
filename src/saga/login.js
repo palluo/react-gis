@@ -16,7 +16,7 @@ function* login(userName, password, onSuccess) {
     let userInfo = yield call (logincheck, obj)
     if (userInfo) {
         yield call (onSuccess)
-        //history.push('/main')
+       // history.push('/main')
         //yield put(loginSuccee(userInfo))
     } 
 }
@@ -54,11 +54,5 @@ export function* watchLogin() {
     while (true) {
         const action = yield take('LOGIN')
         yield fork(login, action.userName, action.password, action.onSuccess)
-    }
-}
-
-export function* watchMap() {
-    while (true) {
-        const action = yield take('CREATE_MAP')
     }
 }
