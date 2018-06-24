@@ -4,27 +4,35 @@ import './index.less';
 import App from './App';
 import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension'
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, combineReducers} from 'redux'
 import createSagaMiddleware from 'redux-saga'
-import myApp from './reducers/index'
-import registerServiceWorker from './registerServiceWorker';
-import {watchLogin} from './saga/login'
+import rootReducer from 'reducers/index'
+import registerServiceWorker from './registerServiceWorker'
+import BrowserRouter from 'react-router-dom/BrowserRouter'
+import { routerMiddleware, routerReducer } from 'react-router-redux'
+import { watchLogin } from 'saga/login'
 
 //创建saga middleware
-const sagaMiddleware = createSagaMiddleware();
-const middlewares = [sagaMiddleware]
-
+const sagaMiddleware = createSagaMiddleware()
+const routerMid = routerMiddleware(BrowserRouter)
+const middlewares = [sagaMiddleware, routerMid]
 let store = createStore(
-  myApp,
+  combineReducers({...rootReducer, routerReducer}),
   composeWithDevTools(applyMiddleware(...middlewares))
 )
+//const history = syncHistoryWithStore(BrowserRouter, store)
 sagaMiddleware.run(watchLogin)
 
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('root')
-);
+const render = Component =>
+  ReactDOM.render(
+    <Provider store={store}>
+      <BrowserRouter>
+        <Component />
+      </BrowserRouter>
+
+    </Provider>,
+    document.getElementById('root')
+  );
+render(App)
 registerServiceWorker();
 

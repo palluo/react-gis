@@ -1,10 +1,13 @@
-import { API } from '../common/config'
-import { getService } from '../common/utils/serviceUtil'
+import { API } from 'common/config'
+import { getService } from 'common/utils/serviceUtil'
 import { call, put, select, take, fork} from 'redux-saga/effects'
-import { loginSuccee } from '../actions/login'
+import { loginSuccee } from 'actions/login'
+import createBrowserHistory from 'history/createBrowserHistory'
+import { watch } from 'fs';
 
+const history = createBrowserHistory()
 
-function* login(userName, password) {
+function* login(userName, password, onSuccess) {
     let encryptionPassword = yield call(getLoginEncryption, password)
     let obj = {
         loginName:userName,
@@ -12,7 +15,9 @@ function* login(userName, password) {
     }
     let userInfo = yield call (logincheck, obj)
     if (userInfo) {
-        yield put(loginSuccee(userInfo))
+        yield call (onSuccess)
+        //history.push('/main')
+        //yield put(loginSuccee(userInfo))
     } 
 }
 
@@ -48,6 +53,12 @@ function* logincheck (data)  {
 export function* watchLogin() {
     while (true) {
         const action = yield take('LOGIN')
-        yield fork(login, action.userName, action.password)
+        yield fork(login, action.userName, action.password, action.onSuccess)
+    }
+}
+
+export function* watchMap() {
+    while (true) {
+        const action = yield take('CREATE_MAP')
     }
 }

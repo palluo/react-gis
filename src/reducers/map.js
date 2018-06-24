@@ -1,10 +1,11 @@
 import MapView from 'esri/views/MapView';
 import EsriMap from 'esri/Map';
+import { CREATE_MAP } from 'actions/map'
 
 const map = (state = {}, action) => {
 
   switch (action.type) {
-    case 'CREATE_MAP':
+    case CREATE_MAP:
 
       return {
         mapCtrl: new MapView({

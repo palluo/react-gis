@@ -1,4 +1,4 @@
-import { LOGIN_SUCCEE } from '../actions/login'
+import { LOGIN_SUCCEE } from 'actions/login'
 
 const initState = {
     isShow:true,

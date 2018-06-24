@@ -4,10 +4,10 @@ import container  from './container'
 import login  from './login'
 
 
-const myApp = combineReducers({
+const rootReducer = combineReducers({
     container,
     login,
     map,
 })
 
-export default myApp;
+export default rootReducer;

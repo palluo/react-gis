@@ -1,4 +1,4 @@
-import { createLoadableComp } from '../common/utils/containerUtil'
+import { createLoadableComp } from 'common/utils/containerUtil'
 import ReactDom from 'react-dom'
 
 
