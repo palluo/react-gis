@@ -1,8 +1,8 @@
 import Loadable  from 'react-loadable'
-import Loading from 'containers/loading/loading'
+import Loading from 'widgets/loading/loading'
 
 const createLoadableComp = url =>  Loadable({
-  loader: () => import(`containers/${url}`),
+  loader: () => import(`widgets/${url}`),
   loading: Loading
 });
 

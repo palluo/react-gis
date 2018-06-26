@@ -10,7 +10,7 @@ import rootReducer from 'reducers/index'
 import registerServiceWorker from './registerServiceWorker'
 import BrowserRouter from 'react-router-dom/BrowserRouter'
 import { routerMiddleware } from 'react-router-redux'
-import { watchLogin } from 'saga/login'
+import rootSaga from 'saga/index'
 
 //创建saga middleware
 const sagaMiddleware = createSagaMiddleware()
@@ -21,7 +21,7 @@ let store = createStore(
   composeWithDevTools(applyMiddleware(...middlewares))
 )
 //const history = syncHistoryWithStore(BrowserRouter, store)
-sagaMiddleware.run(watchLogin)
+sagaMiddleware.run(rootSaga)
 
 const render = Component =>
   ReactDOM.render(

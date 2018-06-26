@@ -16,7 +16,7 @@ import ReactDom from 'react-dom'
     let itemConfig = {
         name:'登录',
         uid:'11',
-        url:'./containers/Login/Login'
+        url:'./widgets/Login/Login'
     }
     let component = createLoadableComp(url)
     //let dom = ReactDom.findDOMNode(component)

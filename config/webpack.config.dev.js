@@ -110,7 +110,7 @@ module.exports = {
       'react-native': 'react-native-web',
       'actions': path.resolve(__dirname, '../src/actions'),
       'common': path.resolve(__dirname, '../src/common'),
-      'containers': path.resolve(__dirname, '../src/containers'),
+      'widgets': path.resolve(__dirname, '../src/widgets'),
       'reducers': path.resolve(__dirname, '../src/reducers'),
       'saga': path.resolve(__dirname, '../src/saga'),
       'routers': path.resolve(__dirname, '../src/routers')

@@ -5,7 +5,7 @@ export default function (loadable) {
         path:'/',
         exact: true,
         component: loadable({
-            loader:() => import('containers/login/login'),
+            loader:() => import('widgets/login/login'),
             loading:() => <div/>
         })
     }]

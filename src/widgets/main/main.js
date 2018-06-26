@@ -34,12 +34,10 @@ class Main extends Component {
 
   render() {
     return (
-      <div className="app">
+      <div className='app'>
         <div className='popup'> </div>
         <div id='container' className='container'>
         {/* {(!this.props.component)?'':<this.props.component/>} */}
-          <div className="appHeader">
-          </div>
         </div>
         <div ref='mapView' className='mapView'>
         </div>
