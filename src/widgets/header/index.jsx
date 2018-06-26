@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './style/header.less'
+import './style/index.less'
 
 class Header extends Component {
     constructor(props) {

@@ -121,7 +121,8 @@ module.exports = {
       'widgets': path.resolve(__dirname, '../src/widgets'),
       'reducers': path.resolve(__dirname, '../src/reducers'),
       'saga': path.resolve(__dirname, '../src/saga'),
-      'routers': path.resolve(__dirname, '../src/routers')
+      'routers': path.resolve(__dirname, '../src/routers'),
+      'libs': path.resolve(__dirname, '../src/libs')
     },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).

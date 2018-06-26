@@ -4,7 +4,7 @@ import lodash from 'lodash'
 const getServiceByMethod = (options) => {
     let method = options.method || 'get', cloneData = lodash.cloneDeep(options.data), url = options.url || ''
     if (url.indexOf('//') === -1) {
-        return;
+        //return;
     }
     switch (method) {
         case 'get':

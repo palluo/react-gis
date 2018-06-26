@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import propTypes from 'prop-types'
 import { Input, Button, Form, Icon } from 'antd'
 import { login } from 'actions/login'
-import './style/login.less'
+import './style/index.less'
 
 const FormItem = Form.Item
 function hasErrors(fieldsError) {

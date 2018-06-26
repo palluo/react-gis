@@ -3,7 +3,8 @@ import { connect } from 'react-redux'
 import { createMap } from 'actions/main'
 import { addContainer } from 'actions/container'
 import { bindActionCreators } from 'redux'
-import './style/main.less'
+import { initApp } from 'common/main'
+import './style/index.less'
 
 const  defaultProps = {
   loginComponent:null,
@@ -28,6 +29,7 @@ class Main extends Component {
     //   this.props.addContainer('Login/Login');
     // }
     if (!this.props.mapCtrl) {
+      initApp()
       this.props.createMap(this.refs.mapView)
     }
   }

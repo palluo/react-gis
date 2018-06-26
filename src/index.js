@@ -6,11 +6,11 @@ import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension'
 import { createStore, applyMiddleware} from 'redux'
 import createSagaMiddleware from 'redux-saga'
-import rootReducer from 'reducers/index'
+import rootReducer from 'reducers'
 import registerServiceWorker from './registerServiceWorker'
 import BrowserRouter from 'react-router-dom/BrowserRouter'
 import { routerMiddleware } from 'react-router-redux'
-import rootSaga from 'saga/index'
+import rootSaga from 'saga'
 
 //创建saga middleware
 const sagaMiddleware = createSagaMiddleware()

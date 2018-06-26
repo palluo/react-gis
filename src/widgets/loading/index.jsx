@@ -1,5 +1,5 @@
 import React from 'react'
-import './style/loading.less'
+import './style/index.less'
 
 export default function Loading() {
   return (
